@@ -33,11 +33,10 @@ public class MainActivity extends AppCompatActivity {
     private Set<TextVideoBean> textVideoBeans;
     private int duration = 15;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main1);
+        setContentView(R.layout.activity_main);
         scrollView = findViewById(R.id.vssv);
         scrollView.setMax(duration);//单位秒
         ll_texts = findViewById(R.id.ll_texts);
@@ -132,6 +131,7 @@ public class MainActivity extends AppCompatActivity {
         long moment = (view.getTop() + view.getHeight() / 2) * duration * 1000 / ll_texts.getHeight();
         LogUtils.d(SimpleScaleView.TAG, "时刻 = " + moment);
         videoBean.setMoment(moment);
+        ((TextView) findViewById(R.id.tv_time)).setText("");
     }
 
     private void computeMoment(View view) {

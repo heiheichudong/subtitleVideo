@@ -2,6 +2,7 @@
 <resources>
     <attr name="lf_scale_view_max" format="integer" />
     <attr name="lf_scale_view_min" format="integer" />
+    <attr name="lf_scale_unit" format="integer" />
     <attr name="lf_scale_view_height" format="dimension" />
     <attr name="lf_scale_view_margin" format="dimension" />
 
@@ -10,5 +11,6 @@
         <attr name="lf_scale_view_min" />
         <attr name="lf_scale_view_height" />
         <attr name="lf_scale_view_margin" />
+        <attr name="lf_scale_unit" />
     </declare-styleable>
 </resources>
