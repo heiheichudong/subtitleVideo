@@ -32,6 +32,8 @@ public class SimpleScaleView extends View {
     private int mRectHeight; //高度
     private int mScaleUnit;//刻度单位
 
+    private float mScalsPointer;
+
     private int mScaleStart = SizeUtils.dp2px(8); //刻度起点 留出数字显示位置
 
     public SimpleScaleView(Context context) {
@@ -137,6 +139,19 @@ public class SimpleScaleView extends View {
         onDrawLine(canvas);
         //画刻度
         onDrawScale(canvas);
+        if (mScalsPointer != 0){
+            onDrawPointer(canvas);
+        }
+    }
+
+    /**
+     *  画指针
+     */
+    private void onDrawPointer(Canvas canvas) {
+        if (mScalsPointer <= mMax && mScalsPointer >= mMin){
+//            canvas.drawLine(0, mScaleStart, 0, mRectHeight + mScaleStart, mPaint);
+//            canvas.drawText(String.valueOf(mScalsPointer), mScaleMaxHeight + 40, 2 * mScaleMargin + mPaint.getTextSize() / 3 + mScaleStart, mPaint);
+        }
     }
 
     private void onDrawLine(Canvas canvas) {//
@@ -163,7 +178,8 @@ public class SimpleScaleView extends View {
         }
     }
 
-    public void setPointer(){
-
+    public void setPointer(float pointer){
+        mScalsPointer = pointer;
+        invalidate();
     }
 }

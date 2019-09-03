@@ -138,6 +138,7 @@ public class MainActivity extends AppCompatActivity {
         long moment = (view.getTop() + view.getHeight() / 2) * duration * 1000 / ll_texts.getHeight();
         float tvMoment = (float) moment / 1000f;
         ((TextView) findViewById(R.id.tv_time)).setText(tvMoment + "s");
+        scrollView.setPointer(tvMoment);
     }
 
     private void addTextVideo(View view) {
