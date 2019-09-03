@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="lf_scale_view_max" format="integer" />
+    <attr name="lf_scale_view_min" format="integer" />
+    <attr name="lf_scale_view_height" format="dimension" />
+    <attr name="lf_scale_view_margin" format="dimension" />
+
+    <declare-styleable name="SimpleScaleView">
+        <attr name="lf_scale_view_max" />
+        <attr name="lf_scale_view_min" />
+        <attr name="lf_scale_view_height" />
+        <attr name="lf_scale_view_margin" />
+    </declare-styleable>
+</resources>

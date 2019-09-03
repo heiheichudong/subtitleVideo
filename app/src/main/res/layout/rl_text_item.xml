@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv_moment"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textSize="10sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_text"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:background="@drawable/bg_textvideo_whilt"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="8dp"
+        android:singleLine="true"
+        android:textColor="@color/whilt"
+        android:textSize="13dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv_add"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_moment"
+        tools:text="@string/app_name" />
+
+    <ImageView
+        android:id="@+id/tv_add"
+        android:layout_width="32dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:gravity="center_vertical"
+        android:padding="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv_delete"
+        app:layout_constraintStart_toEndOf="@+id/tv_text"
+        app:layout_constraintTop_toBottomOf="@+id/tv_moment"
+        app:srcCompat="@drawable/ic_tv_add"
+        tools:srcCompat="@drawable/ic_tv_add" />
+
+    <ImageView
+        android:id="@+id/tv_delete"
+        android:layout_width="32dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="4dp"
+        android:gravity="center_vertical"
+        android:padding="4dp"
+        android:textSize="13dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_moment"
+        app:srcCompat="@drawable/ic_tv_delete"
+        tools:srcCompat="@drawable/ic_tv_delete" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
