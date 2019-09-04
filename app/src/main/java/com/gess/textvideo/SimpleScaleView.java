@@ -139,28 +139,34 @@ public class SimpleScaleView extends View {
         onDrawLine(canvas);
         //画刻度
         onDrawScale(canvas);
-        if (mScalsPointer != 0){
+        if (mScalsPointer != 0) {
             onDrawPointer(canvas);
         }
     }
 
     /**
-     *  画指针
+     * 画指针
      */
     private void onDrawPointer(Canvas canvas) {
-        if (mScalsPointer <= mMax && mScalsPointer >= mMin){
-            canvas.drawLine(0, mScaleStart, 0, mRectHeight + mScaleStart, mPaint);
-            canvas.drawText(String.valueOf(mScalsPointer), mScaleMaxHeight + 40, 2 * mScaleMargin + mPaint.getTextSize() / 3 + mScaleStart, mPaint);
+        if (mScalsPointer <= mMax && mScalsPointer >= mMin) {
+            int y = (int) (mScalsPointer / (float) mMax * (float) mRectHeight + mScaleStart);
+            mPaint.setColor(Color.RED);
+            mPaint.setStrokeWidth(SizeUtils.dp2px(1));
+            canvas.drawLine(0, y, mScaleMaxHeight * 3, y, mPaint);
+            mPaint.setStrokeWidth(1);
+            canvas.drawText(String.valueOf(mScalsPointer) , mScaleMaxHeight + 10, y - SizeUtils.dp2px(2), mPaint);
         }
     }
 
     private void onDrawLine(Canvas canvas) {//
         LogUtils.d(TAG, "onDrawLine mRectHeight = " + mRectHeight + " mScaleMargin = " + mScaleMargin);
+        mPaint.setColor(Color.GRAY);
         mPaint.setStrokeWidth(SizeUtils.dp2px(1));
         canvas.drawLine(0, mScaleStart, 0, mRectHeight + mScaleStart, mPaint);
     }
 
     private void onDrawScale(Canvas canvas) {
+        mPaint.setColor(Color.GRAY);
         mPaint.setTextSize(mRectWidth / 4);
 
         for (int i = 0, k = mMin; i <= (mMax - mMin) * mScaleUnit; i++) {
@@ -178,7 +184,7 @@ public class SimpleScaleView extends View {
         }
     }
 
-    public void setPointer(float pointer){
+    public void setPointer(float pointer) {
         mScalsPointer = pointer;
         invalidate();
     }
