@@ -150,7 +150,7 @@ public class SimpleScaleView extends View {
     private void onDrawPointer(Canvas canvas) {
         if (mScalsPointer <= mMax && mScalsPointer >= mMin) {
             int y = (int) (mScalsPointer / (float) mMax * (float) mRectHeight + mScaleStart);
-            mPaint.setColor(Color.RED);
+            mPaint.setARGB(255,216,27,96);
             mPaint.setStrokeWidth(SizeUtils.dp2px(1));
             canvas.drawLine(0, y, mScaleMaxHeight * 3, y, mPaint);
             mPaint.setStrokeWidth(1);
