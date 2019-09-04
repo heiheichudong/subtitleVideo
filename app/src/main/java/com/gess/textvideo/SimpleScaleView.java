@@ -149,8 +149,8 @@ public class SimpleScaleView extends View {
      */
     private void onDrawPointer(Canvas canvas) {
         if (mScalsPointer <= mMax && mScalsPointer >= mMin){
-//            canvas.drawLine(0, mScaleStart, 0, mRectHeight + mScaleStart, mPaint);
-//            canvas.drawText(String.valueOf(mScalsPointer), mScaleMaxHeight + 40, 2 * mScaleMargin + mPaint.getTextSize() / 3 + mScaleStart, mPaint);
+            canvas.drawLine(0, mScaleStart, 0, mRectHeight + mScaleStart, mPaint);
+            canvas.drawText(String.valueOf(mScalsPointer), mScaleMaxHeight + 40, 2 * mScaleMargin + mPaint.getTextSize() / 3 + mScaleStart, mPaint);
         }
     }
 

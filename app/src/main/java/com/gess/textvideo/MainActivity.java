@@ -132,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
         LogUtils.d(SimpleScaleView.TAG, "时刻 = " + moment);
         videoBean.setMoment(moment);
         ((TextView) findViewById(R.id.tv_time)).setText("");
+        scrollView.setPointer(0);
     }
 
     private void computeMoment(View view) {
